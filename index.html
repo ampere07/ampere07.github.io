@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+  .music{
+    text-align: center;
+  }
+  .text{
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+    /* Variable values */
+:root {
+    --vanilla: #f0e4d0;
+    --chocolate: pink;
+  }
+  
+  /* Body styles */
+  body {
+    background-color: #333;
+  }
+  
+  /* Mixin for coloring elements */
+  @keyframes color {
+    0% {
+      transform: skewX(5deg);
+      box-shadow: 
+        0 0 10px rgba(orange, 0.2),
+        0 0 20px rgba(orange, 0.2),
+        0 0 60px rgba(orange, 0.2),
+        0 0 80px rgba(orange, 0.2);
+    }
+    25% {
+      transform: skewX(-5deg);
+      box-shadow:
+        0 0 10px rgba(orange, 0.5),
+        0 0 20px rgba(orange, 0.5),
+        0 0 60px rgba(orange, 0.5),
+        0 0 80px rgba(orange, 0.5);
+    }
+    50% {
+      transform: skewX(10deg);
+      box-shadow:
+        0 0 10px rgba(orange, 0.3),
+        0 0 20px rgba(orange, 0.3),
+        0 0 60px rgba(orange, 0.3),
+        0 0 80px rgba(orange, 0.3);
+    }
+    75% {
+      transform: skewX(-10deg);
+      box-shadow:
+        0 0 10px rgba(orange, 0.4),
+        0 0 20px rgba(orange, 0.4),
+        0 0 60px rgba(orange, 0.4),
+        0 0 80px rgba(orange, 0.4);
+    }
+    100% {
+      transform: skewX(5deg);
+      box-shadow:
+        0 0 10px rgba(orange, 0.5),
+        0 0 20px rgba(orange, 0.5),
+        0 0 60px rgba(orange, 0.5),
+        0 0 80px rgba(orange, 0.5);
+    }
+  }
+  
+  /* Cake container */
+  .cake {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -70px;
+    margin-left: -125px;
+  }
+  
+  /* Plate styles */
+  .plate {
+    width: 270px;
+    height: 110px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    box-shadow:
+      0 2px 0 darken(#ccc, 10%),
+      0 4px 0 darken(#ccc, 10%),
+      0 5px 40px rgba(black, 0.5);
+  }
+  
+  /* Layer styles */
+  .cake > * {
+    position: absolute;
+  }
+  
+  .layer {
+    position: absolute;
+    display: block;
+    width: 250px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--chocolate);
+    
+  }
+  
+  .layer-top { top: 0px; }
+  .layer-middle { top: 33px; }
+  .layer-bottom { top: 66px; }
+  
+  /* Icing styles */
+  .icing {
+    top: 2px;
+    left: 5px;
+    background-color: var(--vanilla);
+    width: 240px;
+    height: 90px;
+    border-radius: 50%;
+  }
+  
+  /* Drip styles */
+  .drip {
+    display: block;
+    width: 50px;
+    height: 60px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: var(--vanilla);
+  }
+  
+  .drip1 {
+    top: 53px;
+    left: 5px;
+    transform: skewY(15deg);
+    height: 48px;
+    width: 40px;
+  }
+  
+  .drip2 {
+    top: 69px;
+    left: 181px;
+    transform: skewY(-15deg);
+  }
+  
+  .drip3 {
+    top: 54px;
+    left: 90px;
+    width: 80px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  
+  /* Candle styles */
+  .candle {
+    background-color: #7B020B;
+    width: 16px;
+    height: 50px;
+    border-radius: 8px / 4px;
+    top: -20px;
+    left: 50%;
+    margin-left: -8px;
+    z-index: 10;
+  }
+  
+  .candle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: lighten(#7B020B, 10%);
+  }
+  
+  /* Flame styles */
+  .flame {
+    position: absolute;
+    background-color: orange;
+    width: 15px;
+    height: 35px;
+    border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+    top: -34px;
+    left: 50%;
+    margin-left: -7.5px;
+    z-index: 10;
+    box-shadow:
+      0 0 10px rgba(orange, 0.5),
+      0 0 20px rgba(orange, 0.5),
+      0 0 60px rgba(orange, 0.5),
+      0 0 80px rgba(orange, 0.5);
+    transform-origin: 50% 90%;
+    animation: color 1s ease-in-out alternate infinite;
+  }
+  
+</style>
+
+</head>
+<body>
+  <div class="music">
+  <audio autoplay controls>
+    <source src="haaa.mp3" type="audio/mpeg">
+
+  </audio>
+</div>
+  <div class="text">
+    <h2>Happy birthday baby <br>enjoy ur day iloveyouuuu</h2>
+    <p>play mo muna music <br>blow mo yung candle using ur mic</p>
+  </div>
+
+    <div class="cake">
+        <div class="plate"></div>
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top"></div>
+        <div class="icing"></div>
+        <div class="drip drip1"></div>
+        <div class="drip drip2"></div>
+        <div class="drip drip3"></div>
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+        
+      </div>
+    
+<script>
+ 
+
+    // Get microphone input
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(function(stream) {
+        const audioContext = new AudioContext();
+        const analyser = audioContext.createAnalyser();
+        const microphone = audioContext.createMediaStreamSource(stream);
+        const dataArray = new Uint8Array(analyser.frequencyBinCount);
+  
+        microphone.connect(analyser);
+  
+        function detectBlow() {
+          analyser.getByteFrequencyData(dataArray);
+          const average = Array.from(dataArray).reduce((a, b) => a + b, 0) / dataArray.length;
+  
+          if (average > 100) { // Adjust this threshold according to sensitivity
+            document.querySelector('.candle').click();
+          }
+  
+          requestAnimationFrame(detectBlow);
+        }
+  
+        detectBlow();
+      })
+      .catch(function(err) {
+        console.error('Error accessing microphone:', err);
+      });
+  
+    document.querySelector('.candle').addEventListener('click', function() {
+      this.style.animation = 'none'; // Stop the candle flicker animation
+      this.style.bottom = '250px'; // Move the candle upwards
+      this.style.transition = 'bottom 1s'; // Add smooth transition
+  
+      document.querySelector('.flame').style.display = 'none'; // Hide the flame
+  
+      document.querySelector('.blow-message').style.display = 'none'; // Hide blow message
+    });
+  </script>
+</body>
+</html>
